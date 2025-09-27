@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMV_Digital — Portafolio</title>
+  <meta name="description" content="Sitios web simples, confiables y con propósito social. WordPress/Wix, portafolios y páginas para negocios locales.">
+  <link rel="icon" href="assets/logo.png">
+  <meta property="og:title" content="CMV_Digital — Portafolio">
+  <meta property="og:description" content="Sitios web simples, confiables y con propósito social.">
+  <meta property="og:image" content="assets/mockup-hero.jpg">
+  <style>
+    :root {
+      --background: 0 0% 100%;
+      --foreground: 222.2 84% 4.9%;
+      --primary: 222.2 47.4% 11.2%;
+      --primary-foreground: 210 40% 98%;
+      --secondary: 210 40% 96%;
+      --secondary-foreground: 222.2 47.4% 11.2%;
+      --muted: 210 40% 96%;
+      --muted-foreground: 215.4 16.3% 46.9%;
+      --accent: 210 40% 96%;
+      --accent-foreground: 222.2 47.4% 11.2%;
+      --destructive: 0 84.2% 60.2%;
+      --destructive-foreground: 210 40% 98%;
+      --border: 214.3 31.8% 91.4%;
+      --input: 214.3 31.8% 91.4%;
+      --ring: 222.2 84% 4.9%;
+      --brand: 158 64% 52%;
+      --brand2: 199 89% 48%;
+    }
+    .dark {
+      --background: 222.2 84% 4.9%;
+      --foreground: 210 40% 98%;
+      --primary: 210 40% 98%;
+      --primary-foreground: 222.2 47.4% 11.2%;
+      --secondary: 217.2 32.6% 17.5%;
+      --secondary-foreground: 210 40% 98%;
+      --muted: 217.2 32.6% 17.5%;
+      --muted-foreground: 215 20.2% 65.1%;
+      --accent: 217.2 32.6% 17.5%;
+      --accent-foreground: 210 40% 98%;
+      --destructive: 0 62.8% 30.6%;
+      --destructive-foreground: 210 40% 98%;
+      --border: 217.2 32.6% 17.5%;
+      --input: 217.2 32.6% 17.5%;
+      --ring: 199 89% 48%;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; line-height:1.65; color:hsl(var(--foreground)); background:hsl(var(--background));}
+    .container{max-width:1120px;margin:0 auto;padding:0 1rem}
+    img{max-width:100%;height:auto;border-radius:12px}
+    header{position:fixed;top:0;width:100%;background:hsla(var(--background)/.92);backdrop-filter:blur(8px);border-bottom:1px solid hsl(var(--border));z-index:20}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .logo img{height:40px;display:block}
+    .nav-links{display:flex;gap:1.25rem}
+    .nav-links a{color:hsl(var(--muted-foreground));text-decoration:none}
+    .nav-links a:hover{color:hsl(var(--foreground))}
+    .btn{display:inline-block;padding:.6rem 1rem;border-radius:.6rem;border:1px solid hsl(var(--border));text-decoration:none}
+    .btn-primary{background:linear-gradient(135deg,hsl(var(--brand)),hsl(var(--brand2)));color:#0b1020;font-weight:700;border:none}
+    .btn-outline{color:hsl(var(--foreground))}
+    .hero{padding:8rem 0 3.5rem}
+    .hero h1{font-size:clamp(30px,4vw,44px);line-height:1.15;margin-bottom:.6rem;background:linear-gradient(135deg,hsl(var(--brand2)),hsl(var(--brand)));-webkit-background-clip:text;color:transparent}
+    .hero p{color:hsl(var(--muted-foreground));max-width:62ch;margin:0 auto 1.2rem;text-align:center}
+    .hero .actions{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;margin-top:.6rem}
+    .section{padding:3.5rem 0}
+    .section-title{text-align:center;font-size:clamp(22px,3vw,28px);margin-bottom:2rem;color:hsl(var(--primary))}
+    .grid{display:grid;gap:1.25rem}
+    .grid-2{grid-template-columns:1fr}
+    .grid-3{grid-template-columns:1fr}
+    @media(min-width:860px){.grid-2{grid-template-columns:1fr 1fr}.grid-3{grid-template-columns:repeat(3,1fr)}}
+    .card{border:1px solid hsl(var(--border));border-radius:14px;padding:1.25rem;background:hsl(var(--secondary));}
+    .about p{color:hsl(var(--muted-foreground))}
+    .skills{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.8rem}
+    .skill{border:1px solid hsl(var(--border));border-radius:999px;padding:.35rem .7rem;color:hsl(var(--muted-foreground));font-size:.9rem;background:hsl(var(--accent))}
+    .service{text-align:center;padding:1.6rem}
+    .service h3{margin:.5rem 0;color:hsl(var(--primary))}
+    .project .meta{display:flex;align-items:center;justify-content:space-between;color:hsl(var(--muted-foreground));margin-top:.4rem}
+    .contact-grid{display:grid;gap:2rem;grid-template-columns:1fr}
+    @media(min-width:860px){.contact-grid{grid-template-columns:1fr 1fr}}
+    input,textarea{width:100%;padding:.7rem .9rem;border-radius:.6rem;border:1px solid hsl(var(--input));background:hsl(var(--background));color:hsl(var(--foreground))}
+    textarea{min-height:120px;resize:vertical}
+    footer{padding:2rem 0;border-top:1px solid hsl(var(--border));text-align:center;color:hsl(var(--muted-foreground))}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">
+        <img src="assets/logo.png" alt="CMV_Digital logo">
+      </div>
+      <nav class="nav-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#quien-soy">Quién Soy</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <a class="btn btn-primary" href="https://es.fiverr.com/cmv_digital/buying?source=avatar_menu_profile" target="_blank" rel="noopener">Contrátame en Fiverr</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="container">
+        <h1>Sitios web simples, confiables y con impacto social</h1>
+        <p>Soy Carlos. Diseño páginas claras, rápidas y fáciles de usar. Mezclo lo digital con lo social para que tu sitio conecte con personas reales.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://wa.me/XXXXXXXXXX" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+          <a class="btn btn-outline" href="#proyectos">Ver proyectos</a>
+        </div>
+        <div style="margin-top:1.2rem">
+          <img src="assets/mockup-hero.jpg" alt="Vista previa de un sitio web creado por CMV_Digital" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section id="quien-soy" class="section">
+      <div class="container grid grid-2 about">
+        <div class="card">
+          <h2 class="section-title" style="margin-bottom:1rem">Quién Soy</h2>
+          <p>Soy el creador de <strong>CMV_Digital</strong>. Estoy construyendo experiencia práctica en diseño y desarrollo web con foco en resultados simples y honestos. Aunque estoy empezando, trabajo con dedicación para entregar sitios que se ven bien, cargan rápido y generan confianza.</p>
+          <p>Me interesa especialmente apoyar a <em>negocios locales</em>, <em>profesionales independientes</em> y <em>organizaciones sociales</em>. Mi objetivo es unir lo digital con lo social, para que cada proyecto tenga un propósito claro. Trabajo de manera cercana con mis clientes, escuchando sus ideas y transformándolas en soluciones concretas. Creo que la comunicación es clave: entender lo que se quiere transmitir, conocer a quién va dirigido y encontrar la forma más sencilla y atractiva de lograrlo. Mi objetivo es que cada cliente se sienta acompañado durante todo el proceso, desde la planificación inicial hasta la entrega final.</p>
+          <div class="skills">
+            <span class="skill">HTML / CSS</span>
+            <span class="skill">WordPress / Wix (básico)</span>
+            <span class="skill">Diseño responsivo</span>
+            <span class="skill">Estructura de contenido</span>
+            <span class="skill">Comunicación clara</span>
+          </div>
+        </div>
+        <div class="card">
+          <img src="assets/proj1.jpg" alt="Mood visual CMV_Digital — tarjeta de contenido">
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios" class="section" style="background:hsla(var(--muted)/1)">
+      <div class="container">
+        <h2 class="section-title">Servicios</h2>
+        <div class="grid grid-3">
+          <div class="card service">
+            <h3>Landing / One-page</h3>
+            <p>Estructura clara con secciones esenciales y botón a WhatsApp o contacto. Ideal para empezar rápido.</p>
+          </div>
+          <div class="card service">
+            <h3>Portafolio profesional</h3>
+            <p>Galería liviana, sección “Sobre mí” efectiva y formulario funcional para recibir consultas.</p>
+          </div>
+          <div class="card service">
+            <h3>WordPress / Wix</h3>
+            <p>Implementación, ajustes sobre plantillas modernas y guía de contenido paso a paso.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="proyectos" class="section">
+      <div class="container">
+        <h2 class="section-title">Proyectos de ejemplo</h2>
+        <div class="grid grid-3">
+          <article class="card project">
+            <img src="assets/proj4.jpg" alt="Cafetería Puerto Sur — sitio de ejemplo" loading="lazy">
+            <div class="meta">
+              <span><strong>Cafetería Puerto Sur</strong></span>
+              <a class="btn btn-outline" href="#" aria-label="Ver demo Cafetería Puerto Sur">Ver demo</a>
+            </div>
+            <p style="color:hsl(var(--muted-foreground))">One-page con menú y pedidos por WhatsApp.</p>
+          </article>
+          <article class="card project">
+            <img src="assets/proj2.jpg" alt="Portafolio de fotografía — sitio de ejemplo" loading="lazy">
+            <div class="meta">
+              <span><strong>Portafolio Fotografía</strong></span>
+              <a class="btn btn-outline" href="#" aria-label="Ver demo Portafolio Fotografía">Ver demo</a>
+            </div>
+            <p style="color:hsl(var(--muted-foreground))">Galería rápida y sección de contacto.</p>
+          </article>
+          <article class="card project">
+            <img src="assets/proj3.jpg" alt="Fundación Barrio Vivo — sitio de ejemplo" loading="lazy">
+            <div class="meta">
+              <span><strong>Fundación Barrio Vivo</strong></span>
+              <a class="btn btn-outline" href="#" aria-label="Ver demo Fundación Barrio Vivo">Ver demo</a>
+            </div>
+            <p style="color:hsl(var(--muted-foreground))">Página informativa: misión, programas y donaciones.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="section" style="background:hsla(var(--muted)/1)">
+      <div class="container">
+        <h2 class="section-title">Contacto</h2>
+        <div class="contact-grid">
+          <div class="card">
+            <h3 style="color:hsl(var(--primary));margin-bottom:.5rem)">Hablemos sobre tu proyecto</h3>
+            <p style="color:hsl(var(--muted-foreground));margin-bottom:.5rem">Estoy en Constitución, Chile. Disponible para proyectos remotos y locales.</p>
+            <p style="color:hsl(var(--muted-foreground));margin-bottom:.5rem">Email: <a href="mailto:contacto@cmvdigital.com">contacto@cmvdigital.com</a></p>
+            <p style="color:hsl(var(--muted-foreground));margin-bottom:.5rem">WhatsApp: <a href="https://wa.me/XXXXXXXXXX" target="_blank" rel="noopener">+56 9 XXXXX XXXX</a></p>
+          </div>
+          <form class="card" action="https://formspree.io/f/XXXXXXXX" method="POST">
+            <label class="sr-only" for="name">Nombre</label>
+            <input id="name" name="name" type="text" placeholder="Tu nombre" required>
+            <label class="sr-only" for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="Tu email" required>
+            <label class="sr-only" for="subject">Asunto</label>
+            <input id="subject" name="subject" type="text" placeholder="Asunto" required>
+            <label class="sr-only" for="message">Mensaje</label>
+            <textarea id="message" name="message" placeholder="Cuéntame tu idea" required></textarea>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <img src="assets/logo.png" alt="CMV_Digital logo" style="height:28px; display:block; margin:0 auto .6rem">
+      <p>Transformando ideas en experiencias digitales con propósito.</p>
+      <p style="margin-top:.6rem">© <span id="y"></span> CMV_Digital · Hecho en Chile</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
